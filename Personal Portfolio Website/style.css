@@ -1,0 +1,360 @@
+:root {
+    --bg-color1: #000000;
+    --bg-color2: #29115a;
+    --primary-color: #8a5bf9;
+    --header-color: #a67ffc;
+    --header-glow: #dad7e3;
+    --text-color: #FFFFFF;
+    --border-radius: 0.25cap;
+    --gap-spacing: 0.2rem;
+    --border-width: 0.0625rem;
+}
+
+@font-face {
+    font-family: Canva Sans;
+    src: url(./assets/fonts/canva/CanvaSans-Bold.otf);
+}
+
+@font-face {
+    font-family: Fira Code;
+    src: url(./assets/fonts/fira/FiraCode-Bold.ttf);
+}
+
+@font-face {
+    font-family: OCR A Extended;
+    src: url(./assets/fonts/ocra/OCRAEXT.TTF);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: radial-gradient(var(--bg-color1), var(--bg-color2));
+    height: 100vh;
+    margin: 0 auto;
+    color: var(--text-color);
+    font-family: Canva Sans;
+    z-index: 0;
+}
+
+.backgroundEffects {
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: -1000;
+    background-image: radial-gradient(var(--bg-color1), var(--bg-color2));
+    height: 100vh;
+}
+
+.hexagonGrid {
+    display: grid;
+    position: fixed; 
+    z-index: -1000;
+    grid-template-columns: repeat(20, 5vw);
+    grid-template-rows: repeat(20, 5vw);
+    opacity: 0.2;
+    pointer-events: none;
+}
+
+.hexagonGrid div {
+    aspect-ratio: 1; 
+    overflow: visible;
+}
+
+
+.hexagonGrid img {
+    filter: invert(70%) sepia(100%) saturate(1000%) hue-rotate(235deg) brightness(100%) contrast(100%);
+    width: 200%;
+    height: 200%;
+    object-fit: contain;
+}
+
+.leftBound, .rightBound {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color:var(--bg-color2);
+    height: 100vh;
+}
+
+.leftBound {
+    left: -95%;
+    width: 100%;
+}
+
+.rightBound {
+    left: 95%;
+    width: 5%;
+}
+
+.navbarNoDisplay {
+    width: 100%;
+    height: 3rem;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    background-color:var(--bg-color2);
+}
+
+.navbarDisplay {
+    width: 95%;
+    height: 3rem;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    background-color:var(--bg-color2);
+    font-family: OCR A Extended;
+    align-items: center;
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    gap: 67vw;
+}
+
+.leftNavbarDisplay {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.rightNavbarDisplay {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 2vw;
+}
+
+.navbarDisplay > div > a {
+    color: var(--text-color);
+
+}
+
+.profilePicture {
+    width: 15vw;
+    height: 15vw;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-color: var(--primary-color);
+    border-width: 0.5vh;
+    border-style: solid;
+    margin-top: 7rem;
+    margin-bottom: 14rem;
+}
+
+.profilePicture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+h2 { /* using h2 as the header for the home page */
+    font-family: Fira Code;
+    text-align: center;
+    font-size: 2rem;
+    padding-bottom: 0rem;
+    color: var(--primary-color);
+    text-shadow: 0 0 0.5rem #0800ff;
+}
+
+h1 {
+    font-family: Fira Code;
+    text-align: center;
+    font-size: 7rem;
+    color: var(--primary-color);
+    text-shadow: 0 0 0.5rem #0800ff;
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5vh 0 20vh 0;
+}
+
+.projectsMain {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 3vw;
+    margin-top: -15vh;
+}
+
+.projectsMain > div {
+    width: 25vw;
+    height: 45vh;
+    background-color: var(--bg-color2);
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    border-color: var(--primary-color);
+    border-radius: var(--border-radius);
+    border-width: 1vh;
+    border-style: solid;
+}
+
+.aboutMain {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5vw;
+    margin-top: -15vh;
+    width: 80vw;
+    z-index: -100;
+}
+
+.skillsMain {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5vw;
+    margin-top: -15vh;
+    width: 80vw;
+}
+a {
+    text-decoration-line: none;
+}
+
+button {
+    background-color: var(--primary-color);
+    border: 0.5rem solid var(--primary-color);
+    color: var(--text-color);
+    font-size: 1rem;
+    padding: 0.5rem 0.5rem;
+    font-family: Canva Sans;
+    transition: 0.3s;
+    display: block;
+    width: 100%;
+    text-align: center;
+    display: inline-flex;
+    justify-content: center; 
+}
+
+button:hover {
+    background-color: var(--header-color);
+    font-size: 1.5rem;
+    transition: 0.3s;
+}
+
+.homeNavbar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--gap-spacing);
+    width: 80vw;
+ 
+}
+
+.homeNavbar button {
+    display: flex;
+    gap: calc() var(--gap-spacing) + 1rem;
+    margin-bottom: 1rem;
+}
+
+.homeLinks {
+    display: none;
+    /* display: flex;
+    gap: var(--gap-spacing);
+    justify-content: center; 
+    align-items: center; */
+}
+
+.socialLinkImage {
+    max-width: 4rem;
+    padding: 0 0.2rem 0 0.2rem;
+}
+
+.desktopResumeLink {
+    display: none;
+}
+
+footer {
+    background-color:var(--bg-color2);
+    width: 100%;
+    align-items: center;
+    padding-top: 1rem;
+    position: fixed;
+    bottom: 0;
+    
+}
+
+.footerLinks {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
+
+.copyright {
+    font-size: 0.6rem;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    color:rgb(103, 98, 98);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 3rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .profilePicture {
+        width: 30vw;
+        height: 30vw;
+        position: static;
+        transform: none;
+        margin: 2rem auto;
+    }
+
+    .navbarDisplay {
+        gap: 10vw;
+        flex-wrap: wrap;
+    }
+
+    .rightNavbarDisplay {
+        gap: 5vw;
+    }
+
+    .projectsMain {
+        flex-direction: column;
+        gap: 2rem;
+        margin-top: 0;
+    }
+
+    .projectsMain > div {
+        width: 80vw;
+        height: 30vh;
+    }
+
+    .homeNavbar {
+        width: 90vw;
+    }
+
+    button {
+        font-size: 0.9rem;
+        padding: 0.7rem;
+    }
+
+    button:hover {
+        font-size: 1rem;
+    }
+
+    .socialLinkImage {
+        max-width: 2rem;
+    }
+}
