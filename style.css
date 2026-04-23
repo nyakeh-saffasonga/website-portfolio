@@ -25,6 +25,9 @@
     src: url(./assets/fonts/ocra/OCRAEXT.TTF);
 }
 
+
+/* background and general styling */
+
 body {
     display: flex;
     flex-direction: column;
@@ -84,12 +87,16 @@ body {
 .leftBound {
     left: -95%;
     width: 100%;
+    z-index: 1000;
 }
 
 .rightBound {
     left: 95%;
     width: 5%;
+    z-index: 1000;
 }
+
+/* navbar styling */
 
 .navbarNoDisplay {
     width: 100%;
@@ -109,29 +116,32 @@ body {
     background-color:var(--bg-color2);
     font-family: OCR A Extended;
     align-items: center;
+    justify-content: center;
     font-weight: bold;
     display: flex;
     flex-direction: row;
-    gap: 67vw;
 }
 
 .leftNavbarDisplay {
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    width: 80rem;
 }
 
 .rightNavbarDisplay {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
-    gap: 2vw;
+    gap: 2rem;
 }
 
 .navbarDisplay > div > a {
     color: var(--text-color);
 
 }
+
+/* home page styling */
 
 .profilePicture {
     width: 15vw;
@@ -174,6 +184,25 @@ h1 {
     top: 0;
     left: 0;
     right: 0;
+    width: 80vw;
+}
+
+.headerLeftAlign {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    z-index: 0;
+    width: 80vw;
+}
+
+.headerRightAlign {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    z-index: 0;
+    width: 80vw;
 }
 
 main {
@@ -181,6 +210,16 @@ main {
     flex-direction: column;
     align-items: center;
     padding: 5vh 0 20vh 0;
+}
+
+
+.projectsHeader {
+    text-align: center;
+    position: relative;
+    top: 3vh;
+    left: 0;
+    right: 0;
+    width: 80vw;
 }
 
 .projectsMain {
@@ -205,13 +244,26 @@ main {
 }
 
 .aboutMain {
-    display: flex;
-    flex-direction: row;
     align-items: center;
     gap: 5vw;
     margin-top: -15vh;
     width: 80vw;
     z-index: -100;
+    font-family: Canva Sans;
+    color: white;
+}
+
+.aboutHeader {
+    padding-top: 50vh;
+}
+
+.aboutImage {
+    height: 60vh;
+    object-fit: contain;
+    float: right;
+    margin-left: 15vh;
+    margin-top: 0;
+    filter: brightness(100%);
 }
 
 .skillsMain {
@@ -219,9 +271,91 @@ main {
     flex-direction: row;
     align-items: center;
     gap: 5vw;
-    margin-top: -15vh;
+    margin-top: -35vh;
     width: 80vw;
+    font-size: xx-large;
 }
+
+.skillsMain > img {
+    width: 30vw;
+    height: 60vh;
+    object-fit: contain;
+    justify-content: flex-start;
+}
+
+.contactHeader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80vw;
+    margin-top: -1vh;
+}
+
+.contactMain {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2vh;
+    margin-top: -15vh;
+    width: 70vw;
+    background-color: rgba(41, 17, 90, 0.2);
+    padding: 1rem 1rem 1rem 1rem;
+    border-color: var(--primary-color);
+    border-width: 0.5rem;
+    border-style: solid;
+    margin-top: -10vh;
+}
+
+.contactMain form {
+    width: 100%;
+}
+
+.contactMainForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 2vw;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.contactMainForm > section > input, .contactFormMessageSection textarea {
+    background-color: var(--bg-color1);
+    border: 0.1rem solid var(--text-color);
+    color: var(--text-color);
+    font-size: 1rem;
+    padding: 0.5rem;
+    font-family: OCR A Extended;
+    display: block;
+    width: 100%;
+    height: 2rem;
+    box-sizing: border-box;
+}
+
+.contactFormMessageSection textarea {
+    height: 100%;
+}
+
+.contactFormInputSection {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.contactFormMessageSection {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    height: 10rem;
+}
+
+.skillsImage {
+    width: 30vw;
+    height: 60vh;
+    object-fit: contain;
+}
+
 a {
     text-decoration-line: none;
 }

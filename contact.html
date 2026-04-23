@@ -27,10 +27,31 @@
         </div>
     </nav>
 
-    <h1 class="headerRightAlign">CONTACT</h1>
+    <h1 class="contactHeader">CONTACT</h1>
 
-    <main>
-        <form action=""></form>
+    <main class="contactMain">
+        <form action="submit" method="post">
+
+            <section class="contactMainForm">
+
+                <section class="contactFormInputSection">
+
+                <input type="text" id="name" name="name" placeholder="Name...">
+
+                <input type="email" id="email" name="email" placeholder="Email...">
+            
+                </section>
+
+                <section class="contactFormMessageSection">
+
+                    <textarea id="message" name="message" placeholder="Leave a message..."></textarea>
+
+                </section>
+
+            </section>
+
+            <button type="submit">Send Message</button>
+        </form>
     </main>
 
     <footer>
