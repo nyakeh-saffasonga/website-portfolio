@@ -98,6 +98,11 @@ body {
 
 /* navbar styling */
 
+
+.navbarDesktopDisplay > div > a, .navbarMobileDisplay > div > a {
+    color: var(--text-color);
+}
+
 .navbarNoDisplay {
     width: 100%;
     height: 3rem;
@@ -107,39 +112,58 @@ body {
     background-color:var(--bg-color2);
 }
 
-.navbarDisplay {
-    width: 95%;
-    height: 3rem;
+.navbarMobileDisplay {
+        display: flex;
+        width: 100%;
+        height: 3rem;
+        position: fixed;
+        top: 0;
+        z-index: 1000;
+        background-color:var(--bg-color2);
+        font-family: OCR A Extended;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+}
+
+.hamburgerMenu {
     position: fixed;
-    top: 0;
-    z-index: 1000;
-    background-color:var(--bg-color2);
-    font-family: OCR A Extended;
-    align-items: center;
+    margin: 0 auto;
+    z-index: 1001;
+    cursor: pointer;
     justify-content: center;
-    font-weight: bold;
-    display: flex;
-    flex-direction: row;
 }
 
-.leftNavbarDisplay {
+.hamburgerMenu img {
     display: flex;
-    justify-content: flex-start;
     align-items: center;
-    width: 80rem;
+    margin: 0 auto;
+    width: 40px;
+    height: auto;
+    margin: 4px 0;
+    transition: 0.4s;
+    z-index: 2001;
 }
 
-.rightNavbarDisplay {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    gap: 2rem;
+.mobileNavbarLinks {
+    display: none;
+    flex-direction: column;
+    gap: 7vh;
+    font-size: 200%;
+    position: fixed;
+    top: 3rem;
+    left: 0;
+    width: 100%;
+    background-color: var(--bg-color2);
+    z-index: 1000;
+    align-items: center;
 }
 
-.navbarDisplay > div > a {
-    color: var(--text-color);
-
+.navbarDesktopDisplay {
+    display: none;
 }
+
 
 /* home page styling */
 
@@ -263,7 +287,7 @@ main {
     float: right;
     margin-left: 15vh;
     margin-top: 0;
-    filter: brightness(100%);
+    filter: brightness(0) invert(1);
 }
 
 .skillsMain {
@@ -328,7 +352,10 @@ main {
     padding: 0.5rem;
     font-family: OCR A Extended;
     display: block;
-    width: 100%;
+    width: inherit;
+    justify-content: space-between;
+    align-content: space-between;
+    width: calc();
     height: 2rem;
     box-sizing: border-box;
 }
@@ -377,7 +404,7 @@ button {
 
 button:hover {
     background-color: var(--header-color);
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     transition: 0.3s;
 }
 
@@ -404,9 +431,11 @@ button:hover {
     align-items: center; */
 }
 
+
+/* footer styling */
+
 .socialLinkImage {
     max-width: 4rem;
-    padding: 0 0.2rem 0 0.2rem;
 }
 
 .desktopResumeLink {
@@ -438,58 +467,88 @@ footer {
 }
 
 /* Mobile responsiveness */
-@media (max-width: 768px) {
-    h1 {
-        font-size: 3rem;
+
+@media (min-width: 768px) {
+
+    /* desktop navbar styling */
+
+    .navbarDesktopDisplay {
+    display: flex;
+    width: 95%;
+    height: 3rem;
+    position: fixed;
+    top: 0;
+    z-index: 2000;
+    background-color:var(--bg-color2);
+    font-family: OCR A Extended;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
     }
 
-    h2 {
-        font-size: 1.5rem;
-    }
-
-    .profilePicture {
-        width: 30vw;
-        height: 30vw;
-        position: static;
-        transform: none;
-        margin: 2rem auto;
-    }
-
-    .navbarDisplay {
-        gap: 10vw;
-        flex-wrap: wrap;
+    .leftNavbarDisplay {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 80rem;
     }
 
     .rightNavbarDisplay {
-        gap: 5vw;
-    }
-
-    .projectsMain {
-        flex-direction: column;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
         gap: 2rem;
-        margin-top: 0;
     }
 
-    .projectsMain > div {
-        width: 80vw;
-        height: 30vh;
+    /* home page styling */
+
+    .homeHeader {
+        margin-top: -15rem;
     }
 
     .homeNavbar {
-        width: 90vw;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        gap: var(--gap-spacing);
+        width: 80vw;
+        gap: 3vw;
     }
 
-    button {
-        font-size: 0.9rem;
-        padding: 0.7rem;
+    .homeNavbar > a {
+        display: flex;
+        justify-content: center; 
+        align-items: center;
+        width: 60%;
     }
 
-    button:hover {
-        font-size: 1rem;
+    .mobileResume {
+        display: none;
+    }
+
+    /* footer styling */
+
+    .footerLinks {
+        display: flex;
+        justify-content: space-between; 
+        align-items: center;
+        width: 95vw;
+        margin: 0 auto;
+    }
+
+    .desktopResumeLink {
+        color: var(--primary-color);
+        display: flex;
+        justify-content: flex-start; 
+        z-index: 2000;
     }
 
     .socialLinkImage {
-        max-width: 2rem;
+        padding: 0 0.2rem 0 0.2rem;
     }
+
 }
+
  
