@@ -1,8 +1,9 @@
-let grid = document.querySelector(".hexagonGrid");
-let canvas = document.getElementById("hexagon");
-let hexagonImage = document.getElementById("hexagonImage")
-
 function createHexagonGrid() { // hexagon grid
+
+    let grid = document.querySelector(".hexagonGrid");
+    let canvas = document.getElementById("hexagon");
+    let hexagonImage = document.getElementById("hexagonImage");
+
     for (let i = 0; i < 400; i++) {
         let hexagon = document.createElement("div");
         let hexagonImg = document.createElement("img");
@@ -10,14 +11,13 @@ function createHexagonGrid() { // hexagon grid
         hexagon.appendChild(hexagonImg);
         let row = Math.floor(i / 20);
         let col = i % 20;
-        if (col % 2 === 1) {
-            hexagon.style.transform = 'translateY(4vw)';
+        if (row % 2 === 1) {
+            hexagon.style.marginLeft = '2.5vw';
         }
+        hexagon.style.marginTop = '-10vh';
         grid.appendChild(hexagon);
     }
 }
-
-createHexagonGrid();
 
 document.addEventListener('mousemove', (e) => { // hexagon grid animation
     const mouseX = e.clientX;
@@ -33,6 +33,8 @@ document.addEventListener('mousemove', (e) => { // hexagon grid animation
         hex.style.transform = `scale(${scale})`;
     });
 });
+
+createHexagonGrid();
 
 function mobileNavbar() { // mobile navbar
   var x = document.getElementById("mobileNavbarLinks");
