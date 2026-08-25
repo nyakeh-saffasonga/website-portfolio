@@ -1,0 +1,24 @@
+{
+  "name": "website-portfolio",
+  "version": "1.0.0",
+  "description": "Website Portfolio - NodeJS Conversion",
+  "homepage": "https://github.com/nyakeh-saffasonga/website-portfolio#readme",
+  "bugs": {
+    "url": "https://github.com/nyakeh-saffasonga/website-portfolio/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nyakeh-saffasonga/website-portfolio.git"
+  },
+  "license": "ISC",
+  "author": "Nyakeh Saffa-Songa",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "start": "server.js"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "nodemon": "^3.1.14"
+  }
+}
