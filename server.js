@@ -6,7 +6,7 @@ const PORT = 3000
 // This serves as the static floor from which assets are called
 app.use(express.static(path.join(__dirname, 'public')))
 
-app.get('/index',(req,res)=>{
+app.get('/',(req,res)=>{
     res.sendFile(path.join(__dirname,'views','index.html'))
 })
 
