@@ -7,7 +7,7 @@ function createHexagonGrid() { // hexagon grid
     for (let i = 0; i < 400; i++) {
         let hexagon = document.createElement("div");
         let hexagonImg = document.createElement("img");
-        hexagonImg.src = "images/other/hexagon-svgrepo-com.svg";
+        hexagonImg.src = "images/hexagon-svgrepo-com.svg";
         hexagon.appendChild(hexagonImg);
         let row = Math.floor(i / 20);
         let col = i % 20;
